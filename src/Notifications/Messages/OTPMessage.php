@@ -1,6 +1,6 @@
 <?php
 
-namespace Fouladgar\OTP\Notifications\Messages;
+namespace AbdullahFaqeir\OTP\Notifications\Messages;
 
 class OTPMessage
 {

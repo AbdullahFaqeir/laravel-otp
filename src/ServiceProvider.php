@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Fouladgar\OTP;
+namespace AbdullahFaqeir\OTP;
 
-use Fouladgar\OTP\Contracts\SMSClient;
-use Fouladgar\OTP\Contracts\TokenRepositoryInterface;
-use Fouladgar\OTP\Exceptions\SMSClientNotFoundException;
-use Fouladgar\OTP\Notifications\Channels\OTPSMSChannel;
-use Fouladgar\OTP\Token\TokenRepositoryManager;
+use AbdullahFaqeir\OTP\Contracts\SMSClient;
+use AbdullahFaqeir\OTP\Contracts\TokenRepositoryInterface;
+use AbdullahFaqeir\OTP\Exceptions\SMSClientNotFoundException;
+use AbdullahFaqeir\OTP\Notifications\Channels\OTPSMSChannel;
+use AbdullahFaqeir\OTP\Token\TokenRepositoryManager;
 use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
@@ -19,7 +19,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot(): void
     {
         Notification::resolved(
-            function (ChannelManager $service) {
+            static function (ChannelManager $service) {
                 $service->extend(
                     'otp_sms',
                     fn ($app) => new OTPSMSChannel($app->make(config('otp.sms_client')))

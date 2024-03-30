@@ -1,8 +1,8 @@
 <?php
 
-namespace Fouladgar\OTP\Notifications\Messages;
+namespace AbdullahFaqeir\OTP\Notifications\Messages;
 
-class MessagePayload
+readonly class MessagePayload
 {
     public function __construct(private string $to, private string $content, private string $from = '')
     {

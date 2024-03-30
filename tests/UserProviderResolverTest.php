@@ -1,11 +1,11 @@
 <?php
 
-namespace Fouladgar\OTP\Tests;
+namespace AbdullahFaqeir\OTP\Tests;
 
 use Exception;
-use Fouladgar\OTP\Contracts\NotifiableRepositoryInterface;
-use Fouladgar\OTP\Contracts\OTPNotifiable;
-use Fouladgar\OTP\UserProviderResolver;
+use AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\UserProviderResolver;
 use Illuminate\Config\Repository as Config;
 use InvalidArgumentException;
 use Mockery as m;
@@ -32,7 +32,7 @@ class UserProviderResolverTest extends TestCase
     public function it_can_throw_exception_if_model_is_not_an_valid_instance(): void
     {
         $this->expectException(Exception::class);
-        $this->expectExceptionMessage('Your model must implement "Fouladgar\OTP\Contracts\OTPNotifiable".');
+        $this->expectExceptionMessage('Your model must implement "AbdullahFaqeir\OTP\Contracts\OTPNotifiable".');
 
         $config = m::mock(Config::class);
 
@@ -50,7 +50,7 @@ class UserProviderResolverTest extends TestCase
     public function it_can_throw_exception_if_repository_is_not_an_valid_instance(): void
     {
         $this->expectException(Exception::class);
-        $this->expectExceptionMessage('Your repository must implement "Fouladgar\OTP\Contracts\NotifiableRepositoryInterface".');
+        $this->expectExceptionMessage('Your repository must implement "AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface".');
 
         $config = m::mock(Config::class);
         $model = m::mock(OTPNotifiable::class);

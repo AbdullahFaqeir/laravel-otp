@@ -1,8 +1,9 @@
 # Laravel OTP(One-Time Password)
-![Test Status](https://img.shields.io/github/workflow/status/mohammad-fouladgar/laravel-otp/run-tests?label=tests)
-[![Latest Stable Version](http://poser.pugx.org/fouladgar/laravel-otp/v)](https://packagist.org/packages/fouladgar/laravel-otp)
-[![Total Downloads](http://poser.pugx.org/fouladgar/laravel-otp/downloads)](https://packagist.org/packages/fouladgar/laravel-otp)
-[![Code Style Status](https://github.com/mohammad-fouladgar/laravel-otp/actions/workflows/php-cs-fixer.yml/badge.svg?branch=master)](https://github.com/mohammad-fouladgar/laravel-otp/actions/workflows/php-cs-fixer.yml)
+
+![Test Status](https://img.shields.io/github/workflow/status/abdullahfaqeir/laravel-otp/run-tests?label=tests)
+[![Latest Stable Version](http://poser.pugx.org/abdullahfaqeir/laravel-otp/v)](https://packagist.org/packages/abdullahfaqeir/laravel-otp)
+[![Total Downloads](http://poser.pugx.org/abdullahfaqeir/laravel-otp/downloads)](https://packagist.org/packages/abdullahfaqeir/laravel-otp)
+[![Code Style Status](https://github.com/abdullahfaqeir/laravel-otp/actions/workflows/php-cs-fixer.yml/badge.svg?branch=master)](https://github.com/abdullahfaqeir/laravel-otp/actions/workflows/php-cs-fixer.yml)
 
 ## Introduction
 
@@ -11,11 +12,12 @@ send/resend and validate OTP for users authentication with user-friendly methods
 
 ## Version Compatibility
 
-Laravel  | Laravel-OTP
-:---------|:----------
-10.0.x         | 4.0.x
-9.0.x          | 3.0.x
-6.0.x to 8.0.x | 1.0.x
+ Laravel        | Laravel-OTP 
+:---------------|:------------
+ 11.0.x         | 5.0.x       
+ 10.0.x         | 4.0.x       
+ 9.0.x          | 3.0.x       
+ 6.0.x to 8.0.x | 1.0.x       
 
 ## Basic Usage:
 
@@ -59,7 +61,7 @@ OTP()->useProvider('users')
 You can install the package via composer:
 
 ```shell
-composer require fouladgar/laravel-otp
+composer require abdullahfaqeir/laravel-otp
 ```
 
 ## Configuration
@@ -67,7 +69,7 @@ composer require fouladgar/laravel-otp
 As next step, let's publish config file `config/otp.php` by executing:
 
 ```
-php artisan vendor:publish --provider="Fouladgar\OTP\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="AbdullahFaqeir\OTP\ServiceProvider" --tag="config"
 ```
 
 ### Token Storage
@@ -146,12 +148,12 @@ return [
         'users' => [
             'table'      => 'users',
             'model'      => \App\Models\User::class,
-            'repository' => \Fouladgar\OTP\NotifiableRepository::class,
+            'repository' => \AbdullahFaqeir\OTP\NotifiableRepository::class,
         ],
 
        // 'admins' => [
        //   'model'      => \App\Models\Admin::class,
-       //   'repository' => \Fouladgar\OTP\NotifiableRepository::class,
+       //   'repository' => \AbdullahFaqeir\OTP\NotifiableRepository::class,
        // ],
     ],
 
@@ -159,20 +161,20 @@ return [
 ];
 ```
 
-> **Note:** You may also change the default repository and replace your own repository. however, every repository must implement `Fouladgar\OTP\Contracts\NotifiableRepositoryInterface` interface.
+> **Note:** You may also change the default repository and replace your own repository. however, every repository must implement `AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface` interface.
 
 #### Model Preparation
 
-Every model must implement `Fouladgar\OTP\Contracts\OTPNotifiable` and also use
-this `Fouladgar\OTP\Concerns\HasOTPNotify` trait:
+Every model must implement `AbdullahFaqeir\OTP\Contracts\OTPNotifiable` and also use
+this `AbdullahFaqeir\OTP\Concerns\HasOTPNotify` trait:
 
 ```php
 <?php
 
 namespace App\Models;
 
-use Fouladgar\OTP\Concerns\HasOTPNotify;
-use Fouladgar\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Concerns\HasOTPNotify;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -189,10 +191,10 @@ class User extends Authenticatable implements OTPNotifiable
 
 You can use any SMS services for sending OTP message(it depends on your choice).
 
-For sending notifications via this package, first you need to implement the `Fouladgar\OTP\Contracts\SMSClient`
+For sending notifications via this package, first you need to implement the `AbdullahFaqeir\OTP\Contracts\SMSClient`
 contract. This contract requires you to implement `sendMessage` method.
 
-This method will return your SMS service API results via a `Fouladgar\OTP\Notifications\Messages\MessagePayload` object
+This method will return your SMS service API results via a `AbdullahFaqeir\OTP\Notifications\Messages\MessagePayload` object
 which contains user **mobile** and **token** message:
 
 ```php
@@ -200,8 +202,8 @@ which contains user **mobile** and **token** message:
 
 namespace App;
 
-use Fouladgar\OTP\Contracts\SMSClient;
-use Fouladgar\OTP\Notifications\Messages\MessagePayload;
+use AbdullahFaqeir\OTP\Contracts\SMSClient;
+use AbdullahFaqeir\OTP\Notifications\Messages\MessagePayload;
 
 class SampleSMSClient implements SMSClient
 {
@@ -245,8 +247,8 @@ Here we have prepared a practical example. Suppose you are going to login/regist
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Fouladgar\OTP\Exceptions\InvalidOTPTokenException;
-use Fouladgar\OTP\OTPBroker as OTPService;
+use AbdullahFaqeir\OTP\Exceptions\InvalidOTPTokenException;
+use AbdullahFaqeir\OTP\OTPBroker as OTPService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Throwable;
@@ -303,7 +305,7 @@ channel. In order to replace, you should specify channel class here:
 return [
     // ...
 
-    'channel' => \Fouladgar\OTP\Notifications\Channels\OTPSMSChannel::class,
+    'channel' => \AbdullahFaqeir\OTP\Notifications\Channels\OTPSMSChannel::class,
 ];
 ```
 
@@ -315,15 +317,15 @@ OTP notification prepares a default sms and email format that are satisfied for 
 customize how the mail/sms message is constructed.
 
 To get started, pass a closure to the `toSMSUsing/toMailUsing` method provided by
-the `Fouladgar\OTP\Notifications\OTPNotification` notification. The closure will receive the notifiable model instance
+the `AbdullahFaqeir\OTP\Notifications\OTPNotification` notification. The closure will receive the notifiable model instance
 that is receiving the notification as well as the `token` for validating. Typically, you should call the those methods
 from the boot method of your application's `App\Providers\AuthServiceProvider` class:
 
 ```php
 <?php
 
-use Fouladgar\OTP\Notifications\OTPNotification;
-use Fouladgar\OTP\Notifications\Messages\OTPMessage;
+use AbdullahFaqeir\OTP\Notifications\OTPNotification;
+use AbdullahFaqeir\OTP\Notifications\Messages\OTPMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 
 public function boot()
@@ -347,7 +349,7 @@ public function boot()
 To publish translation file you may use this command:
 
 ```
-php artisan vendor:publish --provider="Fouladgar\OTP\ServiceProvider" --tag="lang"
+php artisan vendor:publish --provider="AbdullahFaqeir\OTP\ServiceProvider" --tag="lang"
 ```
 
 you can customize in provided language file:
@@ -380,12 +382,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email fouladgar.dev@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email abdullahfaqeir.dev@gmail.com instead of using the issue tracker.
 
 ## License
 
 Laravel-OTP is released under the MIT License. See the bundled
-[LICENSE](https://github.com/mohammad-fouladgar/laravel-mobile-verification/blob/master/LICENSE)
+[LICENSE](https://github.com/mohammad-abdullahfaqeir/laravel-mobile-verification/blob/master/LICENSE)
 file for details.
 
 Built with :heart: for you.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Fouladgar\OTP\Concerns;
+namespace AbdullahFaqeir\OTP\Concerns;
 
-use Fouladgar\OTP\Notifications\OTPNotification;
+use AbdullahFaqeir\OTP\Notifications\OTPNotification;
 
 trait HasOTPNotify
 {
@@ -32,7 +32,7 @@ trait HasOTPNotify
     {
         $mobileFiled = $this->getOTPMobileField();
 
-        if (! in_array($mobileFiled, $this->fillable, true)) {
+        if (!in_array($mobileFiled, $this->fillable, true)) {
             $this->fillable = array_merge($this->fillable, [$mobileFiled]);
         }
     }

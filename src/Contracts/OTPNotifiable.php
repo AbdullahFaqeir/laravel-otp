@@ -1,6 +1,6 @@
 <?php
 
-namespace Fouladgar\OTP\Contracts;
+namespace AbdullahFaqeir\OTP\Contracts;
 
 interface OTPNotifiable
 {

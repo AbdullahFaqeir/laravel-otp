@@ -21,23 +21,23 @@ return [
      | Here you should specify your user providers. This defines how the users are actually retrieved out of your
      | database or other storage mechanisms used by this application to persist your user's data.
      |
-     | Keep in mind, every model must implement "Fouladgar\OTP\Contracts\OTPNotifiable" and also
-     | use this "Fouladgar\OTP\Concerns\HasOTPNotify" trait.
+     | Keep in mind, every model must implement "AbdullahFaqeir\OTP\Contracts\OTPNotifiable" and also
+     | use this "AbdullahFaqeir\OTP\Concerns\HasOTPNotify" trait.
      |
      | You may also change the default repository and replace your own repository. But every repository must
-     | implement "Fouladgar\OTP\Contracts\NotifiableRepositoryInterface" interface.
+     | implement "AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface" interface.
      |
      */
     'user_providers'   => [
         'users' => [
             'table'      => 'users',
             'model'      => \App\Models\User::class,
-            'repository' => \Fouladgar\OTP\NotifiableRepository::class,
+            'repository' => \AbdullahFaqeir\OTP\NotifiableRepository::class,
         ],
 
 //        'admins' => [
 //            'model'      => \App\Models\Admin::class,
-//            'repository' => \Fouladgar\OTP\NotifiableRepository::class,
+//            'repository' => \AbdullahFaqeir\OTP\NotifiableRepository::class,
 //        ],
     ],
 
@@ -126,5 +126,5 @@ return [
     | If you use default channel you must set "sms_client". Otherwise you don't need that.
     |
     */
-    'channel'          => \Fouladgar\OTP\Notifications\Channels\OTPSMSChannel::class,
+    'channel'          => \AbdullahFaqeir\OTP\Notifications\Channels\OTPSMSChannel::class,
 ];

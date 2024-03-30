@@ -1,13 +1,13 @@
 <?php
 
-namespace Fouladgar\OTP\Tests;
+namespace AbdullahFaqeir\OTP\Tests;
 
-use Fouladgar\OTP\Contracts\OTPNotifiable;
-use Fouladgar\OTP\Exceptions\InvalidOTPTokenException;
-use Fouladgar\OTP\Exceptions\UserNotFoundByMobileException;
-use Fouladgar\OTP\Notifications\Channels\OTPSMSChannel;
-use Fouladgar\OTP\Notifications\OTPNotification;
-use Fouladgar\OTP\Tests\Models\OTPNotifiableUser;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Exceptions\InvalidOTPTokenException;
+use AbdullahFaqeir\OTP\Exceptions\UserNotFoundByMobileException;
+use AbdullahFaqeir\OTP\Notifications\Channels\OTPSMSChannel;
+use AbdullahFaqeir\OTP\Notifications\OTPNotification;
+use AbdullahFaqeir\OTP\Tests\Models\OTPNotifiableUser;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Notification;
 

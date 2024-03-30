@@ -1,9 +1,9 @@
 <?php
 
-namespace Fouladgar\OTP\Tests\Models;
+namespace AbdullahFaqeir\OTP\Tests\Models;
 
-use Fouladgar\OTP\Concerns\HasOTPNotify;
-use Fouladgar\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Concerns\HasOTPNotify;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;

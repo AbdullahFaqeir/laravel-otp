@@ -1,13 +1,13 @@
 <?php
 
-namespace Fouladgar\OTP\Tests;
+namespace AbdullahFaqeir\OTP\Tests;
 
-use Fouladgar\OTP\Contracts\SMSClient;
-use Fouladgar\OTP\Notifications\Channels\OTPSMSChannel;
-use Fouladgar\OTP\Notifications\Messages\MessagePayload;
-use Fouladgar\OTP\Notifications\Messages\OTPMessage;
-use Fouladgar\OTP\Notifications\OTPNotification;
-use Fouladgar\OTP\Tests\Models\OTPNotifiableUser;
+use AbdullahFaqeir\OTP\Contracts\SMSClient;
+use AbdullahFaqeir\OTP\Notifications\Channels\OTPSMSChannel;
+use AbdullahFaqeir\OTP\Notifications\Messages\MessagePayload;
+use AbdullahFaqeir\OTP\Notifications\Messages\OTPMessage;
+use AbdullahFaqeir\OTP\Notifications\OTPNotification;
+use AbdullahFaqeir\OTP\Tests\Models\OTPNotifiableUser;
 use Mockery as m;
 
 class OTPSMSChannelTest extends TestCase

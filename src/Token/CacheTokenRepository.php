@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fouladgar\OTP\Token;
+namespace AbdullahFaqeir\OTP\Token;
 
-use Fouladgar\OTP\Contracts\AbstractTokenRepository;
-use Fouladgar\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Contracts\AbstractTokenRepository;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
 use Illuminate\Contracts\Cache\Repository as Cache;
 
 class CacheTokenRepository extends AbstractTokenRepository

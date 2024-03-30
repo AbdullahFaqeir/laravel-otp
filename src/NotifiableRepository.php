@@ -1,9 +1,9 @@
 <?php
 
-namespace Fouladgar\OTP;
+namespace AbdullahFaqeir\OTP;
 
-use Fouladgar\OTP\Contracts\NotifiableRepositoryInterface;
-use Fouladgar\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
 
 class NotifiableRepository implements NotifiableRepositoryInterface
 {
