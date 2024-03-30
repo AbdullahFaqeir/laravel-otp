@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace AbdullahFaqeir\OTP\Tests;
+namespace Fouladgar\OTP\Tests;
 
-use AbdullahFaqeir\OTP\ServiceProvider;
-use AbdullahFaqeir\OTP\Tests\Models\OTPNotifiableUser;
+use Fouladgar\OTP\ServiceProvider;
+use Fouladgar\OTP\Tests\Models\OTPNotifiableUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -19,7 +19,7 @@ class TestCase extends BaseTestCase
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'AbdullahFaqeir\\OTP\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Fouladgar\\OTP\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

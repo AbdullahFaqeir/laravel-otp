@@ -1,8 +1,8 @@
 <?php
 
-namespace AbdullahFaqeir\OTP\Contracts;
+namespace Fouladgar\OTP\Contracts;
 
-use AbdullahFaqeir\OTP\Notifications\Messages\MessagePayload;
+use Fouladgar\OTP\Notifications\Messages\MessagePayload;
 
 interface SMSClient
 {

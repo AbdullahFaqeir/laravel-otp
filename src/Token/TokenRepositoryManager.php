@@ -1,8 +1,8 @@
 <?php
 
-namespace AbdullahFaqeir\OTP\Token;
+namespace Fouladgar\OTP\Token;
 
-use AbdullahFaqeir\OTP\Contracts\TokenRepositoryInterface;
+use Fouladgar\OTP\Contracts\TokenRepositoryInterface;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Support\Manager;

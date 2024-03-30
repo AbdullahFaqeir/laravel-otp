@@ -1,10 +1,10 @@
 <?php
 
-namespace AbdullahFaqeir\OTP\Tests;
+namespace Fouladgar\OTP\Tests;
 
-use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
-use AbdullahFaqeir\OTP\NotifiableRepository;
-use AbdullahFaqeir\OTP\Tests\Models\OTPNotifiableUser;
+use Fouladgar\OTP\Contracts\OTPNotifiable;
+use Fouladgar\OTP\NotifiableRepository;
+use Fouladgar\OTP\Tests\Models\OTPNotifiableUser;
 
 class NotifiableUserRepositoryTest extends TestCase
 {

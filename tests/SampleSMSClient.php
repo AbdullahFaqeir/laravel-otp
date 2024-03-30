@@ -1,9 +1,9 @@
 <?php
 
-namespace AbdullahFaqeir\OTP\Tests;
+namespace Fouladgar\OTP\Tests;
 
-use AbdullahFaqeir\OTP\Contracts\SMSClient;
-use AbdullahFaqeir\OTP\Notifications\Messages\MessagePayload;
+use Fouladgar\OTP\Contracts\SMSClient;
+use Fouladgar\OTP\Notifications\Messages\MessagePayload;
 
 class SampleSMSClient implements SMSClient
 {

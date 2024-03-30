@@ -1,8 +1,8 @@
 <?php
 
-namespace AbdullahFaqeir\OTP\Tests;
+namespace Fouladgar\OTP\Tests;
 
-use AbdullahFaqeir\OTP\Notifications\Messages\OTPMessage;
+use Fouladgar\OTP\Notifications\Messages\OTPMessage;
 use Illuminate\Notifications\Notification;
 
 class CustomOTPChannel

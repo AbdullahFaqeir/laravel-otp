@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace AbdullahFaqeir\OTP;
+namespace Fouladgar\OTP;
 
 use Exception;
-use AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface;
-use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
-use AbdullahFaqeir\OTP\Contracts\TokenRepositoryInterface;
-use AbdullahFaqeir\OTP\Exceptions\InvalidOTPTokenException;
-use AbdullahFaqeir\OTP\Exceptions\UserNotFoundByMobileException;
+use Fouladgar\OTP\Contracts\NotifiableRepositoryInterface;
+use Fouladgar\OTP\Contracts\OTPNotifiable;
+use Fouladgar\OTP\Contracts\TokenRepositoryInterface;
+use Fouladgar\OTP\Exceptions\InvalidOTPTokenException;
+use Fouladgar\OTP\Exceptions\UserNotFoundByMobileException;
 use Illuminate\Support\Arr;
 use Throwable;
 
@@ -22,8 +22,8 @@ class OTPBroker
     private NotifiableRepositoryInterface $userRepository;
 
     public function __construct(
-        private readonly TokenRepositoryInterface $tokenRepository,
-        private readonly UserProviderResolver $providerResolver
+        private TokenRepositoryInterface $tokenRepository,
+        private UserProviderResolver $providerResolver
     ) {
         $this->channel = $this->getDefaultChannel();
         $this->userRepository = $this->resolveUserRepository();

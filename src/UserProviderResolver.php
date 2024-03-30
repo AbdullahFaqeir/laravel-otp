@@ -1,14 +1,14 @@
 <?php
 
-namespace AbdullahFaqeir\OTP;
+namespace Fouladgar\OTP;
 
 use Exception;
-use AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface;
-use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
+use Fouladgar\OTP\Contracts\NotifiableRepositoryInterface;
+use Fouladgar\OTP\Contracts\OTPNotifiable;
 use Illuminate\Config\Repository as Config;
 use InvalidArgumentException;
 
-readonly class UserProviderResolver
+class UserProviderResolver
 {
     public function __construct(private Config $config)
     {
@@ -29,11 +29,11 @@ readonly class UserProviderResolver
         $repository = $config['repository'];
 
         if (! is_subclass_of($model, OTPNotifiable::class)) {
-            throw new Exception('Your model must implement "AbdullahFaqeir\OTP\Contracts\OTPNotifiable".');
+            throw new Exception('Your model must implement "Fouladgar\OTP\Contracts\OTPNotifiable".');
         }
 
         if (! is_subclass_of($repository, NotifiableRepositoryInterface::class)) {
-            throw new Exception('Your repository must implement "AbdullahFaqeir\OTP\Contracts\NotifiableRepositoryInterface".');
+            throw new Exception('Your repository must implement "Fouladgar\OTP\Contracts\NotifiableRepositoryInterface".');
         }
 
         return new $repository(new $model());

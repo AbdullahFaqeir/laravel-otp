@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace AbdullahFaqeir\OTP\Notifications;
+namespace Fouladgar\OTP\Notifications;
 
 use Closure;
-use AbdullahFaqeir\OTP\Notifications\Messages\OTPMessage;
+use Fouladgar\OTP\Notifications\Messages\OTPMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Lang;
@@ -16,7 +16,7 @@ class OTPNotification extends Notification
 
     public static ?Closure $toSMSCallback = null;
 
-    public function __construct(private readonly string $token, private readonly array $channels)
+    public function __construct(private string $token, private array $channels)
     {
     }
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AbdullahFaqeir\OTP\Contracts;
+namespace Fouladgar\OTP\Contracts;
 
 use Illuminate\Support\Carbon;
 

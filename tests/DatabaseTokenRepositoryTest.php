@@ -1,10 +1,10 @@
 <?php
 
-namespace AbdullahFaqeir\OTP\Tests;
+namespace Fouladgar\OTP\Tests;
 
 use Carbon\Carbon;
-use AbdullahFaqeir\OTP\Contracts\TokenRepositoryInterface;
-use AbdullahFaqeir\OTP\Tests\Models\OTPNotifiableUser;
+use Fouladgar\OTP\Contracts\TokenRepositoryInterface;
+use Fouladgar\OTP\Tests\Models\OTPNotifiableUser;
 use Illuminate\Support\Str;
 
 class DatabaseTokenRepositoryTest extends TestCase
