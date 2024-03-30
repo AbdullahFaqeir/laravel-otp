@@ -1,5 +1,5 @@
 {
-  "name": "fouladgar/laravel-otp",
+  "name": "abdullahfaqeir/laravel-otp",
   "description": "",
   "keywords": [
     "otp",
@@ -11,22 +11,27 @@
     "lumen"
   ],
   "support": {
-    "issues": "https://github.com/mohammad-fouladgar/laravel-otp/issues",
-    "source": "https://github.com/mohammad-fouladgar/laravel-otp"
+    "issues": "https://github.com/abdullahfaqeir/laravel-otp/issues",
+    "source": "https://github.com/abdullahfaqeir/laravel-otp"
   },
   "authors": [
     {
       "name": "Mohammad Fouladgar",
       "email": "fouladgar.dev@gmail.com",
       "role": "Developer"
+    },
+    {
+      "name": "Abdullah Al-Faqeir",
+      "email": "abdullah@al-faqeir.com",
+      "role": "Developer"
     }
   ],
   "license": "MIT",
   "require": {
-    "php": "^8.0 || ^8.1",
-    "illuminate/database": "^9.0|^10.0",
-    "illuminate/support": "^9.0|^10.0",
-    "illuminate/notifications": "^9.0.2|^10.0"
+    "php": "^8.2",
+    "illuminate/database": "^9.0|^10.0|^11.0",
+    "illuminate/support": "^9.0|^10.0|^11.0",
+    "illuminate/notifications": "^9.0.2|^10.0|^11.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.3",
@@ -36,7 +41,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Fouladgar\\OTP\\": "src/"
+      "AbdullahFaqeir\\OTP\\": "src/"
     },
     "files": [
       "src/helpers.php"
@@ -44,8 +49,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Fouladgar\\OTP\\Tests\\": "tests/",
-      "Fouladgar\\OTP\\Database\\Factories\\": "database/factories"
+      "AbdullahFaqeir\\OTP\\Tests\\": "tests/",
+      "AbdullahFaqeir\\OTP\\Database\\Factories\\": "database/factories"
     }
   },
   "scripts": {
@@ -55,7 +60,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Fouladgar\\OTP\\ServiceProvider"
+        "AbdullahFaqeir\\OTP\\ServiceProvider"
       ]
     }
   },

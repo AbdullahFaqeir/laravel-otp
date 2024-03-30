@@ -1,6 +1,6 @@
 <?php
 
-namespace Fouladgar\OTP\Exceptions;
+namespace AbdullahFaqeir\OTP\Exceptions;
 
 use Exception;
 

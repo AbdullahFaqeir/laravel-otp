@@ -1,10 +1,10 @@
 <?php
 
-namespace Fouladgar\OTP\Notifications\Channels;
+namespace AbdullahFaqeir\OTP\Notifications\Channels;
 
-use Fouladgar\OTP\Contracts\OTPNotifiable;
-use Fouladgar\OTP\Contracts\SMSClient;
-use Fouladgar\OTP\Notifications\Messages\OTPMessage;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Contracts\SMSClient;
+use AbdullahFaqeir\OTP\Notifications\Messages\OTPMessage;
 use Illuminate\Notifications\Notification;
 
 class OTPSMSChannel

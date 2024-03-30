@@ -1,8 +1,8 @@
 <?php
 
-namespace Fouladgar\OTP\Database\Factories;
+namespace AbdullahFaqeir\OTP\Database\Factories;
 
-use Fouladgar\OTP\Tests\Models\OTPNotifiableUser;
+use AbdullahFaqeir\OTP\Tests\Models\OTPNotifiableUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OTPNotifiableUserFactory extends Factory
@@ -21,7 +21,7 @@ class OTPNotifiableUserFactory extends Factory
     public function definition(): array
     {
         return [
-            'mobile' => '+989389599530',
+          'mobile' => '+989389599530',
         ];
     }
 }

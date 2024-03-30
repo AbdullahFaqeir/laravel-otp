@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fouladgar\OTP\Token;
+namespace AbdullahFaqeir\OTP\Token;
 
-use Fouladgar\OTP\Contracts\AbstractTokenRepository;
-use Fouladgar\OTP\Contracts\OTPNotifiable;
+use AbdullahFaqeir\OTP\Contracts\AbstractTokenRepository;
+use AbdullahFaqeir\OTP\Contracts\OTPNotifiable;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Query\Builder;
 
